@@ -1,9 +1,0 @@
-.settings-input label {
-    margin-right: auto;
-}
-
-.settings-input {
-    max-width: 300px;
-    display: flex;
-    flex-direction: row;
-}

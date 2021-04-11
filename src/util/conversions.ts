@@ -31,7 +31,6 @@ export function zoomToIconSize(zoom: number): number {
     // Marker size at zoom -8.7 = 3000
     //
     const r = range(400, 3000, -4, -8.7, zoom);
-    console.log(zoom + ":" + r);
     return r;
 }
 
@@ -56,9 +55,9 @@ export function findCenter(locations: ThrallLocation[]): LatLngLiteral| null {
 }
 
 
-export function calculateBounds(south: number, west: number, north: number, east: number, offset: MapOffset): LatLngBoundsExpression {
-    const southWest: LatLng = new LatLng(south - offset.offsetBot, west - offset.offsetLeft);
-    const northEast: LatLng = new LatLng(north - offset.offsetTop, east - offset.offsetRight);
+export function calculateBounds(south: number, west: number, north: number, east: number): LatLngBoundsExpression {
+    const southWest: LatLng = new LatLng(south, west);
+    const northEast: LatLng = new LatLng(north, east);
     return  new LatLngBounds(
         southWest,
         northEast

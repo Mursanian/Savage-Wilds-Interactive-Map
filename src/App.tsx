@@ -3,7 +3,6 @@ import './css/variables.css'
 import './css/dialog.css'
 import {ThrallMap} from "./components/ThrallMap";
 import {Thrall} from "./model/Thrall";
-import {MapType} from "./model/MapType";
 
 
 interface MapData {
@@ -26,30 +25,6 @@ interface AppState {
 }
 
 
-function determineMapType(): MapType {
-    const urlParams = new URLSearchParams(window.location.search);
-    const mapParam = urlParams.get('map');
-    if (mapParam && mapParam === 'savage-wilds') {
-        return 'savage-wilds'
-    }
-    if (mapParam && mapParam === 'exiled-lands') {
-        return 'exiled-lands'
-    }
-    if (!mapParam) {
-        const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?map=exiled-lands`;
-        window.history.pushState({path: newUrl}, '', newUrl);
-    }
-    return 'exiled-lands';
-}
-
-function determineDataUrl(): string {
-    const mapType = determineMapType();
-    console.log(process.env.PUBLIC_URL)
-    if (mapType === "exiled-lands") {
-        return process.env.PUBLIC_URL + '/data.json';
-    }
-    return process.env.PUBLIC_URL + '/data_sw.json';
-}
 
 export class App extends React.Component<any, AppState> {
 
@@ -75,7 +50,7 @@ export class App extends React.Component<any, AppState> {
     }
 
     componentDidMount() {
-        fetch(determineDataUrl())
+        fetch(process.env.PUBLIC_URL + "/data.json")
             .then(value => value.json())
             .then(data => this.setState({data, loaded: true}))
     }
@@ -88,7 +63,6 @@ export class App extends React.Component<any, AppState> {
         return (
             <div>
                 <ThrallMap data={this.state.data.data}
-                           mapType={determineMapType()}
                            minZoom={this.state.data.minZoom}
                            maxZoom={this.state.data.maxZoom}
                            mapHq={this.state.data.map_hq}

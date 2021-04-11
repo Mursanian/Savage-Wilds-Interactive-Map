@@ -1,6 +1,6 @@
 # What is it?
 
-A small map built using React and Leaflet that displays the TW thralls and their locations.
+A small map built using React and Leaflet that displays locations on the Savage Wilds map
 
 # Help me gather data!
 
@@ -17,28 +17,12 @@ If you are familiar with git and GitHub, you may just edit the ``data.json`` in 
 Want to run it locally? It runs without any backend, and is hosted on GH pages. Simply install git and NodeJS (and the bundled npm)
 and run these in your command line:
 
-1. ``git clone https://github.com/Nia292/tw-map.git``
-2. ``cd tw-map``
+1. ``git clone https://github.com/Mursanian/Savage_Wilds_Interactive_Map.git``
+2. ``cd Savage_Wilds_Interactive_Map``
 3. ``npm install``
 4. ``npm start``
 
 Then open your browser on ``http://localhost:3000``
-
-# Adapting for broader use
-
-I made this map because I was annoyed of having to remember the locations all the time. In theory, this map
-could be adapted to actually display any data you like.
-
-If you would like to do this yourself, you actually just need a little bit of React knowledge. If you want to host yourself,
-no server is required, since GitHub allows you to host it through GH pages as long as your repo is public.
-
-Here is what you would do:
-
-1. Fork this repository
-2. Go to repository settings and enable GH pages on the main branch and the docs directory
-3. Start adapting the application
-
-If you do need help on the third step, feel free to let me know!
 
 ## Deploying
 
