@@ -1,30 +1,13 @@
 import React from 'react';
 import './css/variables.css'
 import './css/dialog.css'
-import {ThrallMap} from "./components/ThrallMap";
-import {Thrall} from "./model/Thrall";
-
-
-interface MapData {
-    "map_lq": string;
-    "map_hq": string;
-    minZoom: number;
-    maxZoom: number;
-    data: Thrall[];
-    bounds: {
-        south: number,
-        west: number,
-        north: number,
-        east: number
-    }
-}
+import {SavageWildsMap} from "./components/SavageWildsMap";
+import {MapData} from "./model/MapData";
 
 interface AppState {
     data: MapData;
     loaded: boolean;
 }
-
-
 
 export class App extends React.Component<any, AppState> {
 
@@ -34,7 +17,7 @@ export class App extends React.Component<any, AppState> {
         this.state = {
             loaded: false,
             data: {
-                data: [],
+                categories: [],
                 map_hq: '',
                 map_lq: '',
                 minZoom: -12,
@@ -62,15 +45,15 @@ export class App extends React.Component<any, AppState> {
         const bounds = this.state.data.bounds;
         return (
             <div>
-                <ThrallMap data={this.state.data.data}
-                           minZoom={this.state.data.minZoom}
-                           maxZoom={this.state.data.maxZoom}
-                           mapHq={this.state.data.map_hq}
-                           mapLq={this.state.data.map_lq}
-                           north={bounds.north}
-                           west={bounds.west}
-                           east={bounds.east}
-                           south={bounds.south}
+                <SavageWildsMap categories={this.state.data.categories}
+                                minZoom={this.state.data.minZoom}
+                                maxZoom={this.state.data.maxZoom}
+                                mapHq={this.state.data.map_hq}
+                                mapLq={this.state.data.map_lq}
+                                north={bounds.north}
+                                west={bounds.west}
+                                east={bounds.east}
+                                south={bounds.south}
                 />
             </div>
         );

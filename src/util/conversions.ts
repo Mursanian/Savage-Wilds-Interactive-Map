@@ -1,8 +1,7 @@
 import {LatLng, LatLngBounds, LatLngBoundsExpression, LatLngLiteral, Polygon, Polyline} from "leaflet";
-import {ThrallLocation} from "../model/ThrallLocation";
-import {MapOffset} from "../model/MapOffset";
+import {MapLocation} from "../model/MapLocation";
 
-export function ceCoordinateToLatLng(ceCoordinate: ThrallLocation): LatLngLiteral {
+export function ceCoordinateToLatLng(ceCoordinate: MapLocation): LatLngLiteral {
     return {
         // Because coordinates are in pixel space, the y-axis goes from negative (bot) to positive (top),
         // where as in CE it goes from positive(bot) to negative(top)
@@ -23,22 +22,8 @@ const range = (
     a: number
 ) => lerp(x2, y2, invlerp(x1, y1, a));
 
-/**
- * Turns a zoom level into a marker size.
- */
-export function zoomToIconSize(zoom: number): number {
-    // Marker size at zoom -4 = 400
-    // Marker size at zoom -8.7 = 3000
-    //
-    const r = range(400, 3000, -4, -8.7, zoom);
-    return r;
-}
 
-export function ceCoordinate(x: number, y: number, z: number): ThrallLocation {
-    return {x, y, z}
-}
-
-export function findCenter(locations: ThrallLocation[]): LatLngLiteral| null {
+export function findCenter(locations: MapLocation[]): LatLngLiteral| null {
     if (locations.length <= 0) {
         return null;
     }

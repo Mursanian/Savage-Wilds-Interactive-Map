@@ -1,16 +1,15 @@
-import {Thrall} from "../../../model/Thrall";
-import {ThrallLocation} from "../../../model/ThrallLocation";
-import './ThrallDetailsLocations.css';
+import {MapLocation, MapLocationCategory} from "../../../model/MapLocation";
+import './LocationCategoryDetailsLocations.css';
 import React from "react";
 
 interface ThrallDetailsLocationProps {
-    location: ThrallLocation;
-    onSelectLocation(location: ThrallLocation): void;
+    location: MapLocation;
+    onSelectLocation(location: MapLocation): void;
 }
 
 export interface ThrallDetailsLocationsProps {
-    thrall?: Thrall;
-    onSelectLocation(location: ThrallLocation): void;
+    category?: MapLocationCategory;
+    onSelectLocation(location: MapLocation): void;
 }
 
 const ThrallDetailsLocation = (props: ThrallDetailsLocationProps) => <div
@@ -21,15 +20,15 @@ const ThrallDetailsLocation = (props: ThrallDetailsLocationProps) => <div
             <img alt="icon camp" src={process.env.PUBLIC_URL + "/fc_assets/icon_camp.png"}/>
         </div>
         <div style={{marginRight: 'auto'}}>
-            <div style={{fontSize: '14pt'}}>{props.location.location}</div>
-            <div style={{fontSize: '11pt'}}>Spawns at the {props.location.spawnSpot} spot.</div>
-            <div style={{fontSize: '9pt'}}>{props.location.spawnSpotDetail}</div>
+            <div style={{fontSize: '14pt'}}>{props.location.area}</div>
+            <div style={{fontSize: '11pt'}}>{props.location.areaDescription}</div>
+            <div style={{fontSize: '9pt'}}>{props.location.detail}</div>
             <div style={{fontSize: '9pt'}}>Coordiantes: {props.location.x} / {props.location.y} / {props.location.z}</div>
         </div>
     </div>
 </div>
 
-export const ThrallDetailsLocations = (props: ThrallDetailsLocationsProps) => {
+export const LocationCategoryDetailsLocations = (props: ThrallDetailsLocationsProps) => {
     return  <div className="thrall-location-list-container">
         <div>
             <div className="thrall-location-list-header">
@@ -39,7 +38,7 @@ export const ThrallDetailsLocations = (props: ThrallDetailsLocationsProps) => {
                 Click a location to jump to it
             </div>
             <div className="thrall-details-locations">
-                {props.thrall?.locations.map((value, index) => <ThrallDetailsLocation
+                {props.category?.locations.map((value, index) => <ThrallDetailsLocation
                     onSelectLocation={props.onSelectLocation}
                     key={index}
                     location={value}/> )}

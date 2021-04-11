@@ -1,10 +1,9 @@
 import {ImageOverlay, MapContainer, ZoomControl} from "react-leaflet";
 import {CRS, LatLngLiteral,} from "leaflet";
-import {ThrallList} from "./thrall-list/ThrallList";
-import {Thrall} from "../model/Thrall";
+import {LocationList} from "./thrall-list/LocationList";
+import {MapLocation, MapLocationCategory} from "../model/MapLocation";
 import React, {MouseEvent, useState} from "react";
 import {calculateBounds, ceCoordinateToLatLng, findCenter} from "../util/conversions";
-import {ThrallLocation} from "../model/ThrallLocation";
 import {ZoomCenter} from "../model/ZoomCenter";
 import {SetViewOnClick} from "./thrall-map-utils/SetViewOnClick";
 import {MarkerForLocations} from "./thrall-map-utils/MarkerForLocations";
@@ -15,7 +14,7 @@ const DEFAULT_ZOOM = -8.7;
 const DEFAULT_CENTER: LatLngLiteral = {lat: 0, lng: 0};
 
 interface ThrallMapProps {
-    data: Thrall[];
+    categories: MapLocationCategory[];
     mapLq: string;
     mapHq: string;
     north: number;
@@ -26,32 +25,33 @@ interface ThrallMapProps {
     maxZoom: number;
 }
 
-export function ThrallMap(props: ThrallMapProps) {
-    const [selectedThrall, setSelectedThrall] = useState(undefined as unknown as Thrall | undefined);
+export function SavageWildsMap(props: ThrallMapProps) {
+    //FIXME name
+    const [selectedCategory, setSelectedCategory] = useState(undefined as unknown as MapLocationCategory | undefined);
     // Use a separate focus flag to control whether the detail display or the list display is used
     // This avoids having an undefined name while the element with the details is sliding out
-    const [thrallFocused, setThrallFocused] = useState(false);
+    const [categoryFocused, setCategoryFocused] = useState(false);
     const [zoomCenter, setZoomCenter] = useState(undefined as unknown as ZoomCenter | undefined);
     const [infoDialogOpen, setInfoDialogOpen] = useState(false);
     const [useHq, setUseHq] = useState(false);
 
-    function handleSelectThrall(thrall: Thrall) {
-        let center = findCenter(thrall.locations);
+    function handleSelectCategory(catgory: MapLocationCategory) {
+        let center = findCenter(catgory.locations);
         if (center) {
             setZoomCenter({zoom: -8, center});
         }
-        setSelectedThrall(thrall)
-        setThrallFocused(true)
+        setSelectedCategory(catgory)
+        setCategoryFocused(true)
     }
 
     function handleDeselectThrall() {
         // While animating, we still want the thrall details visible until
         // it has slide out.
-        setThrallFocused(false)
+        setCategoryFocused(false)
         setZoomCenter({zoom: -8.7, center: DEFAULT_CENTER});
     }
 
-    function handleSelectLocation(location: ThrallLocation): void {
+    function handleSelectLocation(location: MapLocation): void {
         setZoomCenter({
             center: ceCoordinateToLatLng(location),
             zoom: -7,
@@ -92,15 +92,15 @@ export function ThrallMap(props: ThrallMapProps) {
             {useHq && <ImageOverlay url={process.env.PUBLIC_URL + props.mapHq} bounds={mapBounds}/>}
             <MapEvents mapBounds={mapBounds} onZoomCenterChange={setZoomCenter}/>
             <SetViewOnClick location={zoomCenter}/>
-            <MarkerForLocations thrall={selectedThrall} focused={thrallFocused}/>
+            <MarkerForLocations category={selectedCategory} focused={categoryFocused}/>
         </MapContainer>
         <div className="sidebar-right">
-            <ThrallList thralls={props.data}
-                        onSelectLocation={handleSelectLocation}
-                        selectedThrallFocused={thrallFocused}
-                        selectedThrall={selectedThrall}
-                        onDeselectThrall={handleDeselectThrall}
-                        onSelectThrall={handleSelectThrall}/>
+            <LocationList categories={props.categories}
+                          selectedCategory={selectedCategory}
+                          onSelectCategory={handleSelectCategory}
+                          onSelectLocation={handleSelectLocation}
+                          selectedThrallFocused={categoryFocused}
+                          onDeselectThrall={handleDeselectThrall}/>
         </div>
     </div>
 }
