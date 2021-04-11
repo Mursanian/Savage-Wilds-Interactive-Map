@@ -29,7 +29,7 @@
 }
 
 .thrall-list-sliding-out {
-    right: 0px;
+    right: 0;
     animation: thrall-list-slide-out var(--sidebar-slide-anim-duration) both;
 }
 
@@ -41,7 +41,7 @@
         overflow: hidden;
     }
     100% {
-        right: 0px;
+        right: 0;
         visibility: unset;
         overflow: auto;
     }
