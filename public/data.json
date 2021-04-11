@@ -21,6 +21,24 @@
       "name": "Point of Interest",
       "description": "Various points of interest can be found throughout the Savage Wilds",
       "locations": []
+    },
+    {
+      "type": "RECIPE",
+      "name": "Recipes",
+      "description": "Various recipes you may be find throughout the Savage Wilds",
+      "locations": []
+    },
+    {
+      "type": "THRALL",
+      "name": "Thralls",
+      "description": "Various thralls you may be find throughout the Savage Wilds",
+      "locations": []
+    },
+    {
+      "type": "MERCHANT",
+      "name": "Merchants",
+      "description": "Various merchants you may be find throughout the Savage Wilds",
+      "locations": []
     }
   ]
 

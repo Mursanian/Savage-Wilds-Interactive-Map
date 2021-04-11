@@ -63,6 +63,15 @@ export function SavageWildsMap(props: ThrallMapProps) {
         setUseHq(target.checked)
     }
 
+    function determineLocations(): MapLocation[] {
+        if (!selectedCategory) {
+            return props.categories
+                .map(value => value.locations)
+                .reduce((previousValue, currentValue) => [...previousValue, ...currentValue], []);
+        }
+        return selectedCategory.locations;
+    }
+
     const center = zoomCenter?.center ? zoomCenter.center : DEFAULT_CENTER;
     const zoom = zoomCenter?.zoom ? zoomCenter.zoom : DEFAULT_ZOOM
     const mapBounds = calculateBounds(props.south, props.west, props.north, props.east);
@@ -92,7 +101,7 @@ export function SavageWildsMap(props: ThrallMapProps) {
             {useHq && <ImageOverlay url={process.env.PUBLIC_URL + props.mapHq} bounds={mapBounds}/>}
             <MapEvents mapBounds={mapBounds} onZoomCenterChange={setZoomCenter}/>
             <SetViewOnClick location={zoomCenter}/>
-            <MarkerForLocations category={selectedCategory} focused={categoryFocused}/>
+            <MarkerForLocations locations={determineLocations()} focused={categoryFocused}/>
         </MapContainer>
         <div className="sidebar-right">
             <LocationList categories={props.categories}

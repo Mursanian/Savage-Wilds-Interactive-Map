@@ -1,4 +1,4 @@
-import {MapLocationCategory} from "../../model/MapLocation";
+import {MapLocation, MapLocationCategory} from "../../model/MapLocation";
 import {Marker, Tooltip, useMap} from "react-leaflet";
 import React from "react";
 import {ceCoordinateToLatLng} from "../../util/conversions";
@@ -11,23 +11,19 @@ const locationIcon = icon({
 });
 
 
-function makeMarkerForLocation(category: MapLocationCategory, location: LatLngLiteral, zoom: number) {
+function makeMarkerForLocation(location: MapLocation) {
     // FIXME add icon from location
-    return <Marker key={location.lat + '_' + location.lng}
+    const position = ceCoordinateToLatLng(location);
+    return <Marker key={location.id}
                    icon={locationIcon}
-                   position={location}>
-        <Tooltip direction="bottom">{category.name}</Tooltip>
+                   position={position}>
+        <Tooltip direction="bottom">{location.name}</Tooltip>
     </Marker>
 }
 
-export function MarkerForLocations(props: {category?: MapLocationCategory, focused: boolean}): any {
-    let zoom = useMap().getZoom();
+export function MarkerForLocations(props: {locations: MapLocation[], focused: boolean}): any {
     if (!props.focused) {
         return [];
     }
-    const category = props.category;
-    if (!category) {
-        return <React.Fragment/>;
-    }
-    return category.locations.map(location => makeMarkerForLocation(category, ceCoordinateToLatLng(location), zoom));
+    return props.locations.map(location => makeMarkerForLocation(location));
 }

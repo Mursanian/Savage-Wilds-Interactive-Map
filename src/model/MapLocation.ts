@@ -31,4 +31,6 @@ export enum MapLocationType {
     THRALL = "THRALL",
     POINT_OF_INTEREST = "POINT_OF_INTEREST",
     BOSS = "BOSS",
+    RECIPE = "RECIPE",
+    MERCHANT = "MERCHANT",
 }
