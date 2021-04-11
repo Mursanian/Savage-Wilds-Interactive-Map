@@ -26,7 +26,6 @@ interface ThrallMapProps {
 }
 
 export function SavageWildsMap(props: ThrallMapProps) {
-    //FIXME name
     const [selectedCategory, setSelectedCategory] = useState(undefined as unknown as MapLocationCategory | undefined);
     // Use a separate focus flag to control whether the detail display or the list display is used
     // This avoids having an undefined name while the element with the details is sliding out
@@ -94,6 +93,7 @@ export function SavageWildsMap(props: ThrallMapProps) {
                       zoomDelta={0.1}
                       crs={CRS.Simple}
                       bounds={mapBounds}
+                      maxBounds={mapBounds}
                       zoomControl={false}
                       zoom={zoom}>
             <ZoomControl/>
