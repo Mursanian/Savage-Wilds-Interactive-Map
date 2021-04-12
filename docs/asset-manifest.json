@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Savage_Wilds_Interactive_Map/static/css/main.dc441a63.chunk.css",
-    "main.js": "/Savage_Wilds_Interactive_Map/static/js/main.11f7270b.chunk.js",
-    "main.js.map": "/Savage_Wilds_Interactive_Map/static/js/main.11f7270b.chunk.js.map",
-    "runtime-main.js": "/Savage_Wilds_Interactive_Map/static/js/runtime-main.13b8f481.js",
-    "runtime-main.js.map": "/Savage_Wilds_Interactive_Map/static/js/runtime-main.13b8f481.js.map",
-    "static/css/2.c1e28d34.chunk.css": "/Savage_Wilds_Interactive_Map/static/css/2.c1e28d34.chunk.css",
-    "static/js/2.b898bf70.chunk.js": "/Savage_Wilds_Interactive_Map/static/js/2.b898bf70.chunk.js",
-    "static/js/2.b898bf70.chunk.js.map": "/Savage_Wilds_Interactive_Map/static/js/2.b898bf70.chunk.js.map",
-    "index.html": "/Savage_Wilds_Interactive_Map/index.html",
-    "static/css/2.c1e28d34.chunk.css.map": "/Savage_Wilds_Interactive_Map/static/css/2.c1e28d34.chunk.css.map",
-    "static/css/main.dc441a63.chunk.css.map": "/Savage_Wilds_Interactive_Map/static/css/main.dc441a63.chunk.css.map",
-    "static/js/2.b898bf70.chunk.js.LICENSE.txt": "/Savage_Wilds_Interactive_Map/static/js/2.b898bf70.chunk.js.LICENSE.txt"
+    "main.css": "/Savage-Wilds-Interactive-Map/static/css/main.dc441a63.chunk.css",
+    "main.js": "/Savage-Wilds-Interactive-Map/static/js/main.02501034.chunk.js",
+    "main.js.map": "/Savage-Wilds-Interactive-Map/static/js/main.02501034.chunk.js.map",
+    "runtime-main.js": "/Savage-Wilds-Interactive-Map/static/js/runtime-main.7ca8c6b6.js",
+    "runtime-main.js.map": "/Savage-Wilds-Interactive-Map/static/js/runtime-main.7ca8c6b6.js.map",
+    "static/css/2.c1e28d34.chunk.css": "/Savage-Wilds-Interactive-Map/static/css/2.c1e28d34.chunk.css",
+    "static/js/2.b898bf70.chunk.js": "/Savage-Wilds-Interactive-Map/static/js/2.b898bf70.chunk.js",
+    "static/js/2.b898bf70.chunk.js.map": "/Savage-Wilds-Interactive-Map/static/js/2.b898bf70.chunk.js.map",
+    "index.html": "/Savage-Wilds-Interactive-Map/index.html",
+    "static/css/2.c1e28d34.chunk.css.map": "/Savage-Wilds-Interactive-Map/static/css/2.c1e28d34.chunk.css.map",
+    "static/css/main.dc441a63.chunk.css.map": "/Savage-Wilds-Interactive-Map/static/css/main.dc441a63.chunk.css.map",
+    "static/js/2.b898bf70.chunk.js.LICENSE.txt": "/Savage-Wilds-Interactive-Map/static/js/2.b898bf70.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.13b8f481.js",
+    "static/js/runtime-main.7ca8c6b6.js",
     "static/css/2.c1e28d34.chunk.css",
     "static/js/2.b898bf70.chunk.js",
     "static/css/main.dc441a63.chunk.css",
-    "static/js/main.11f7270b.chunk.js"
+    "static/js/main.02501034.chunk.js"
   ]
 }
