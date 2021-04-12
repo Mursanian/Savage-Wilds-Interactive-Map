@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/tw-map/static/css/main.6e92b9b4.chunk.css",
-    "main.js": "/tw-map/static/js/main.86da01ee.chunk.js",
-    "main.js.map": "/tw-map/static/js/main.86da01ee.chunk.js.map",
-    "runtime-main.js": "/tw-map/static/js/runtime-main.ee531324.js",
-    "runtime-main.js.map": "/tw-map/static/js/runtime-main.ee531324.js.map",
-    "static/css/2.c1e28d34.chunk.css": "/tw-map/static/css/2.c1e28d34.chunk.css",
-    "static/js/2.9e635768.chunk.js": "/tw-map/static/js/2.9e635768.chunk.js",
-    "static/js/2.9e635768.chunk.js.map": "/tw-map/static/js/2.9e635768.chunk.js.map",
-    "index.html": "/tw-map/index.html",
-    "static/css/2.c1e28d34.chunk.css.map": "/tw-map/static/css/2.c1e28d34.chunk.css.map",
-    "static/css/main.6e92b9b4.chunk.css.map": "/tw-map/static/css/main.6e92b9b4.chunk.css.map",
-    "static/js/2.9e635768.chunk.js.LICENSE.txt": "/tw-map/static/js/2.9e635768.chunk.js.LICENSE.txt"
+    "main.css": "/Savage_Wilds_Interactive_Map/static/css/main.dc441a63.chunk.css",
+    "main.js": "/Savage_Wilds_Interactive_Map/static/js/main.11f7270b.chunk.js",
+    "main.js.map": "/Savage_Wilds_Interactive_Map/static/js/main.11f7270b.chunk.js.map",
+    "runtime-main.js": "/Savage_Wilds_Interactive_Map/static/js/runtime-main.13b8f481.js",
+    "runtime-main.js.map": "/Savage_Wilds_Interactive_Map/static/js/runtime-main.13b8f481.js.map",
+    "static/css/2.c1e28d34.chunk.css": "/Savage_Wilds_Interactive_Map/static/css/2.c1e28d34.chunk.css",
+    "static/js/2.b898bf70.chunk.js": "/Savage_Wilds_Interactive_Map/static/js/2.b898bf70.chunk.js",
+    "static/js/2.b898bf70.chunk.js.map": "/Savage_Wilds_Interactive_Map/static/js/2.b898bf70.chunk.js.map",
+    "index.html": "/Savage_Wilds_Interactive_Map/index.html",
+    "static/css/2.c1e28d34.chunk.css.map": "/Savage_Wilds_Interactive_Map/static/css/2.c1e28d34.chunk.css.map",
+    "static/css/main.dc441a63.chunk.css.map": "/Savage_Wilds_Interactive_Map/static/css/main.dc441a63.chunk.css.map",
+    "static/js/2.b898bf70.chunk.js.LICENSE.txt": "/Savage_Wilds_Interactive_Map/static/js/2.b898bf70.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ee531324.js",
+    "static/js/runtime-main.13b8f481.js",
     "static/css/2.c1e28d34.chunk.css",
-    "static/js/2.9e635768.chunk.js",
-    "static/css/main.6e92b9b4.chunk.css",
-    "static/js/main.86da01ee.chunk.js"
+    "static/js/2.b898bf70.chunk.js",
+    "static/css/main.dc441a63.chunk.css",
+    "static/js/main.11f7270b.chunk.js"
   ]
 }
