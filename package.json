@@ -2,7 +2,7 @@
   "name": "tw-thrall-map",
   "version": "0.1.0",
   "private": true,
-  "homepage": "Savage_Wilds_Interactive_Map",
+  "homepage": "Savage-Wilds-Interactive-Map",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
